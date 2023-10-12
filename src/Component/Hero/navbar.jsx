@@ -227,7 +227,7 @@ function Navbar() {
                 >
                   {/* User avatar */}
                   <img
-                    src="../src/assets/Profile logo.png"
+                    src="../assets/Profilelogo.png"
                     className="rounded-full"
                    style={{ height: "40px", width: "40px"}}
                     alt=""
@@ -243,7 +243,7 @@ function Navbar() {
                 >
                   {/* User avatar */}
                   <img
-                    src="../src/assets/Profile logo.png"
+                    src="../assets/Profilelogo.png"
                     className="rounded-full"
                    style={{ height: "40px", width: "40px",display:'none'}}
                     alt=""

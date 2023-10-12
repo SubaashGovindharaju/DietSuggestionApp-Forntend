@@ -1,11 +1,11 @@
 .imgweightloss{
-    background-image: url('../src/assets/weightloss.jpg');
+    background-image: url('../assets/weightloss.jpg');
     background-size:100% 100%;
     background-position: center;
 }
 
 .imgweightgain{
-    background-image: url('../src/assets/weightgain.jpg');
+    background-image: url('../assets/weightgain.jpg');
     background-size: 100% 100%;
     background-position: center;
 }

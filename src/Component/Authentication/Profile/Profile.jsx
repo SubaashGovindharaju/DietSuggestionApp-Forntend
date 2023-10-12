@@ -43,7 +43,7 @@ const Profile = () => {
           <div
             className="absolute top-0 w-full h-full bg-center bg-cover"
             style={{
-              backgroundImage: "url('../src/assets/ProfileBg.jpg')",
+              backgroundImage: "url('../assets/ProfileBg.jpg')",
             }}
           >
             <span
@@ -79,8 +79,8 @@ const Profile = () => {
                   <div className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                     <div className="relative">
                       <img
-                        alt="..."
-                        src="../src/assets/Profile logo.png"
+                        alt="photo"
+                        src="../assets/Profilelogo.png"
                         className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px"
                       />
                     </div>
