@@ -290,6 +290,8 @@ const Hero = () => {
         <h1 className={styles.heading}>BMI Calculator</h1>
         <div className={styles.button}>
           <div>
+                        <img src="../src/assets/image.jpg" alt="" />
+
             <label>Height (cm):</label>
             <input
               type="number"
