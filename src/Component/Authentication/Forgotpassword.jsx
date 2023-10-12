@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 // import styles from "./ForgotPassword.module.css";
-import styles from './ForgotPassword.module.css';
+import styles from './Forgotpassword.module.css';
 
 import { useState } from "react";
 import { backendUrl } from "../../config";
