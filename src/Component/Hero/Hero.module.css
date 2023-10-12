@@ -1,0 +1,162 @@
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+
+  .outbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100% !important;
+    background-image: url('../src/assets/image.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+
+  .container {
+    width: 30rem;
+    /* background-color: white; */
+    border-radius: 30px;
+    background: rgba(227, 221, 210, 0.73);
+    padding: 30px;
+    height: fit-content;
+    
+  }
+  
+
+  @media screen and (max-width: 321px) {
+    .container {
+        width: 18rem !important;
+        /* background-color: white; */
+        padding: 30px;
+        height: fit-content;
+
+    }
+
+    .heading{
+        font-size: 150% !important;
+      }
+    
+
+
+  }
+
+  @media screen and (max-width: 426px) {
+    .container {
+        width: 22rem;
+        /* background-color: white; */
+        /* border-radius: 10px; */
+        padding: 30px;
+        height: fit-content;
+    }
+  }
+    
+
+  
+  
+
+
+
+  
+  
+  
+  
+  .heading{
+    text-align: center;
+    font-size: 200%;
+    font-weight: bolder;
+
+  }
+
+ 
+
+  p{
+    font-size: 20px;
+
+  }
+
+
+
+  
+
+  /* App.css */
+
+/* Styling for the entire BMI calculator container */
+/* .bmi-calculator {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  } */
+  
+  /* Styling for labels and input fields */
+  /* label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  } */
+  
+  input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Styling for the Calculate button */
+ button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+
+  }
+  .button{
+    text-align: center;
+
+}
+  /* Styling for the BMI value, calorie information, and BMI range */
+  p {
+    margin: 10px 0;
+    font-weight: bold;
+  }
+  
+  /* Styling for the color-coded BMI range indicator */
+  .bmi-range-color {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 10px;
+  }
+  
+  .underweight {
+    background-color: blue;
+  }
+  
+  .normalweight {
+    background-color: green;
+  }
+  
+  .overweight {
+    background-color: yellow;
+  }
+  
+  .obese {
+    background-color: red;
+  }
+  
