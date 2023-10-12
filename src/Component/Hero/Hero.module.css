@@ -14,7 +14,7 @@
     align-items: center;
     justify-content: center;
     height: 100% !important;
-    background-image: url('../assets/image.jpg');
+    background-image: url('../src/assets/image.jpg');
     background-size: cover;
     background-position: center;
   }
