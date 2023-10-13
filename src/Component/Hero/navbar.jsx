@@ -3,7 +3,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 import Hero from "./Hero";
 import DiatRout from "../Diat/IndianDiat/DiatRout";
-import DiatGain from "../Diat/IndianDiat/DiatGain"; 
+import DiatGain from "../Diat/IndianDiat/DiatGain";
 import MondayGain from "../Diat/DiatForweightGain/MondayGain";
 import TuesdayGain from "../Diat/DiatForweightGain/TuesdayGain";
 import WednesdayGain from "../Diat/DiatForweightGain/WednesdayGain";
@@ -28,12 +28,10 @@ import Registercheck from "../Authentication/Registercheck";
 import Profile from "../Authentication/Profile/Profile";
 import PrivateRoute from "../../PrivateRoute";
 import EditUser from "../Authentication/Profile/Editprofile";
-// import TamilFridayGain from "../Diat/TamilDiatForweightGain/TamilFridayGain";
 import Diatcuisine from "../Diat/Diatcuisine";
 
-// import TamilDiaRout from '../Diat/TamilnaduDiat/TamilDiatRout';
-import TamilDiatGain from '../Diat/TamilnaduDiat/TamilDiatGain';
-import TamilDiatLoss from '../Diat/TamilnaduDiat/TamilDiatLoss';
+import TamilDiatGain from "../Diat/TamilnaduDiat/TamilDiatGain";
+import TamilDiatLoss from "../Diat/TamilnaduDiat/TamilDiatLoss";
 import TamilMondayGain from "../Diat/TamilnaduDiat/TamilDiatForweightGain/TamilMondayGain";
 import TamilDiatRout from "../Diat/TamilnaduDiat/TamilDiatRout";
 import TamilTuesdayGain from "../Diat/TamilnaduDiat/TamilDiatForweightGain/TamilTuesdayGain";
@@ -50,28 +48,12 @@ import TamilFridayLoss from "../Diat/TamilnaduDiat/TamilDiatForweightLoss/TamilF
 import TamilSaturdayLoss from "../Diat/TamilnaduDiat/TamilDiatForweightLoss/TamilSaturdayLoss";
 import TamilSundayLoss from "../Diat/TamilnaduDiat/TamilDiatForweightLoss/TamilSundayLoss";
 
-
-
-
 function Navbar() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   const toggleMobileNav = () => {
     setIsMobileNavOpen(!isMobileNavOpen);
   };
-
-  // const [isLoggedIn, setIsLoggedIn] = useState(true); // Initially set to true if the user is logged in
-
-  // const handleLogout = () => {
-  //   // Remove user data from local storage
-  //   localStorage.removeItem('user');
-
-  //   // Update the login state to false after logging out
-  //   setIsLoggedIn(false);
-  //     //     return <Navigate to={'/login'} replace />;
-
-  //   // Implement any additional logout logic here if needed
-  // };
 
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -92,46 +74,10 @@ function Navbar() {
       setLoggedIn(false); // Update the state to reflect the logout
       window.location.reload(); // Reload the page after logout
     } else {
-      // If user is not logged in, redirect to the login page
       window.location.href = "/login"; // Replace with your login page URL
     }
   };
 
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  // useEffect(() => {
-  //   const storedUser = localStorage.getItem('user');
-  //   if (storedUser && JSON.parse(storedUser)) {
-  //     setIsLoggedIn(true);
-  //   }
-  // }, []);
-
-  // const handleClick = () => {
-  //   if (isLoggedIn) {
-  //     // Perform logout logic here and remove user from localStorage if needed.
-  //     localStorage.removeItem('user');
-  //     setIsLoggedIn(false);
-  //   } else {
-  //     setIsLoggedIn(true);
-  //     return <Navigate to={'/login'} replace />;
-
-  //     // Perform login logic here and store user in localStorage if needed.
-  //     // Example: localStorage.setItem('user', JSON.stringify(userData));
-
-  //   }
-  // };
-
-  // const buttonText = isLoggedIn ? 'Logout' : 'Login';
-
-  // const Logout =()=>{
-  //   if (localStorage.getItem('user') && JSON.parse(localStorage.getItem('user'))) {
-  //     return "Login";
-  //   }
-  //     else{
-  //     return "Logout";
-
-  //     }
-  //   };
   return (
     <BrowserRouter>
       <div className="navbox">
@@ -384,12 +330,16 @@ function Navbar() {
             </Route>
           </Route>
 
-
           <Route path="tamildiat">
-            <Route index element={<PrivateRoute element={<TamilDiatRout />} />} />
-            {/* <Route path="tamildiatgain" element={<TamilDiatGain />} /> */}
+            <Route
+              index
+              element={<PrivateRoute element={<TamilDiatRout />} />}
+            />
             <Route path="tamildiatgain">
-              <Route index element={<PrivateRoute element={<TamilDiatGain  />} />} />
+              <Route
+                index
+                element={<PrivateRoute element={<TamilDiatGain />} />}
+              />
               <Route
                 path="tamilmondaygain"
                 element={<PrivateRoute element={<TamilMondayGain />} />}
@@ -400,7 +350,7 @@ function Navbar() {
               />
               <Route
                 path="tamilwednesdaygain"
-                element={<PrivateRoute element={<TamilWednesdayGain/>} />}
+                element={<PrivateRoute element={<TamilWednesdayGain />} />}
               />
               <Route
                 path="tamilthursdaygain"
@@ -420,9 +370,11 @@ function Navbar() {
               />
             </Route>
 
-            {/* <Route path="tamildiatloss" element={<TamilDiatLoss />} /> */}
             <Route path="tamildiatloss">
-              <Route index element={<PrivateRoute element={<TamilDiatLoss />} />} />
+              <Route
+                index
+                element={<PrivateRoute element={<TamilDiatLoss />} />}
+              />
               <Route
                 path="tamilmondayloss"
                 element={<PrivateRoute element={<TamilMondayLoss />} />}
@@ -453,14 +405,11 @@ function Navbar() {
               />
             </Route>
           </Route>
-
-
         </Route>
         <Route
           path="/404"
           element={<h3>Page not found ,please check url</h3>}
         />
-        {/* <Route path='*' element={<Navigator to={'/404'} replace />} /> */}
       </Routes>
     </BrowserRouter>
   );

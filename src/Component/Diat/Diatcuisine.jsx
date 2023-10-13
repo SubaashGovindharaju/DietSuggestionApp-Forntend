@@ -18,32 +18,7 @@ function Diatcuisine() {
           </Link>
         </div>
       </div>
-      {/*       
-<div className="grid grid-cols-2 hover:grid-cols-6">
-
-  </div> */}
     </div>
-    // <div className="flex justify-between">
-    //   <div className="w-1/3 flex justify-center items-center">
-    //     <Link to="/diat/diatloss">
-    //       <img
-    //         src='../src/assets/weightloss.jpg'
-    //         alt="Weight Gain"
-    //         className="cursor-pointer"
-    //         style={{height:500}}
-    //       />
-    //     </Link>
-    //   </div>
-    //   <div className="w-1/3 flex justify-center items-center">
-    //     <Link to="/diat/diatgain">
-    //       <img
-    //         src="../src/assets/weightgain.jpg"
-    //         alt="Weight Loss"
-    //         className="cursor-pointer"
-    //       />
-    //     </Link>
-    //   </div>
-    // </div>
   );
 }
 

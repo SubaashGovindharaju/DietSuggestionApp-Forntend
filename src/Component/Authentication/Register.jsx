@@ -1,15 +1,13 @@
 import { useState } from "react";
 import "./Login.css";
-// import { backendUrl } from '../config.js';
 import { backendUrl } from "../../config";
 import { Link, useNavigate } from "react-router-dom";
 
 function Register() {
-
-  const [Firstname, setFirstname] = useState('');
-  const [Lastname, setLastname] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [Firstname, setFirstname] = useState("");
+  const [Lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleFirstNameChange = (e) => {
     setFirstname(e.target.value);
@@ -30,61 +28,52 @@ function Register() {
   };
 
   const handleReset = () => {
-    setEmail('');
-    setPassword('');
-    setFirstname('');
-    setLastname('');
-
-  }
-
-  
+    setEmail("");
+    setPassword("");
+    setFirstname("");
+    setLastname("");
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const registerResponse = await fetch(`${backendUrl}/auth/register`, {
-      method: 'POST',
-      body: JSON.stringify({ Firstname,Lastname,email, password }),
+      method: "POST",
+      body: JSON.stringify({ Firstname, Lastname, email, password }),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     });
     const data = await registerResponse.json();
     console.log(data);
-    if(registerResponse.status==409)
-    {
+    if (registerResponse.status == 409) {
       alert("user already exits");
-    }else{
-    handleReset();
-    alert("Registerd");
-    handleEmailCheck();
-    navigate("/login");
+    } else {
+      handleReset();
+      alert("Registerd");
+      handleEmailCheck();
+      navigate("/login");
     }
-   
   };
-
 
   const handleEmailCheck = async () => {
     const loginResponse = await fetch(`${backendUrl}/auth/regmail`, {
-        method: 'POST',
-        body: JSON.stringify({ email }),
-        headers: {
-            'Content-Type': 'application/json',
-        },
+      method: "POST",
+      body: JSON.stringify({ email }),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
     const data = await loginResponse.json();
     if (loginResponse.status === 404) {
-        alert('user not found');
+      alert("user not found");
     } else {
-        alert("Activation Link is send to your mail");
-        console.log(data.responceObj.email);
-        handleReset();
-        navigate("/login");
+      alert("Activation Link is send to your mail");
+      console.log(data.responceObj.email);
+      handleReset();
+      navigate("/login");
     }
-};
-
-
-
+  };
 
   return (
     <div style={{ marginTop: 0, margin: 10 }}>
@@ -102,7 +91,7 @@ function Register() {
 
             {/* Right column container with form */}
             <div className="md:w-8/12 lg:ml-6 lg:w-5/12">
-              <form  onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit}>
                 <div className="headername">Register</div>
                 <br />
                 <div className="name">
@@ -118,8 +107,8 @@ function Register() {
                     <input
                       type="text"
                       className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                      value={Firstname} 
-                      onChange={handleFirstNameChange} 
+                      value={Firstname}
+                      onChange={handleFirstNameChange}
                       required
                       placeholder="First Name"
                     />
@@ -140,8 +129,8 @@ function Register() {
                     <input
                       type="text"
                       className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                      value={Lastname} 
-                      onChange={handleLastNameChange} 
+                      value={Lastname}
+                      onChange={handleLastNameChange}
                       required
                       placeholder="Last Name"
                     />
@@ -163,8 +152,8 @@ function Register() {
                     type="text"
                     className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                     value={email}
-                     onChange={handleEmailChange} 
-                     required
+                    onChange={handleEmailChange}
+                    required
                     placeholder="Email address"
                   />
                   <label className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">
@@ -184,9 +173,9 @@ function Register() {
                   <input
                     type="password"
                     className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                    value={password} 
+                    value={password}
                     onChange={handlePasswordChange}
-                     required 
+                    required
                     placeholder="Password"
                   />
                   <label className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">

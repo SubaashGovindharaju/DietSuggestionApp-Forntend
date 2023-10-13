@@ -1,15 +1,11 @@
 import "./Login.css";
-import { useState } from 'react';
+import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { backendUrl } from "../../config";
 
-// import Register from './Register';
-
 function Login() {
-
-  
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -20,45 +16,45 @@ function Login() {
   };
 
   const handleReset = () => {
-    setEmail('');
-    setPassword('');
-  }
+    setEmail("");
+    setPassword("");
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const loginResponse = await fetch(`${backendUrl}/auth/login`, {
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify({ email, password }),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     });
 
     const data = await loginResponse.json();
-if(loginResponse.status === 405){
-  alert('Not Activated your account');
-
-}else
-    if (loginResponse.status === 401 || loginResponse.status === 404 ) {
-      alert('Login failed');
+    if (loginResponse.status === 405) {
+      alert("Not Activated your account");
+    } else if (loginResponse.status === 401 || loginResponse.status === 404) {
+      alert("Login failed");
     } else {
-      alert('Login Success');
-      localStorage.setItem('user', JSON.stringify(data));
+      alert("Login Success");
+      localStorage.setItem("user", JSON.stringify(data));
       window.location.reload();
       handleReset();
     }
   };
 
-  if (localStorage.getItem('user') && JSON.parse(localStorage.getItem('user'))) {
-    const items = JSON.parse(localStorage.getItem('user'));
+  if (
+    localStorage.getItem("user") &&
+    JSON.parse(localStorage.getItem("user"))
+  ) {
+    const items = JSON.parse(localStorage.getItem("user"));
     console.log(items.email);
-    return <Navigate to={'/'} replace />;
-
+    return <Navigate to={"/"} replace />;
   }
 
   return (
-    <div className="loginbody"style={{ padingTop: 0, pading: 10 }}>
+    <div className="loginbody" style={{ padingTop: 0, pading: 10 }}>
       <section className="h-screen">
         <div className="container  h-full px-6 py-24">
           <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
@@ -88,9 +84,9 @@ if(loginResponse.status === 405){
                   <input
                     type="text"
                     className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                    value={email} 
+                    value={email}
                     onChange={handleEmailChange}
-                     required 
+                    required
                     placeholder="Email address"
                   />
                   <label className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">
@@ -110,9 +106,9 @@ if(loginResponse.status === 405){
                   <input
                     type="password"
                     className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                    value={password} 
+                    value={password}
                     onChange={handlePasswordChange}
-                     required 
+                    required
                     placeholder="Password"
                   />
                   <label className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">
@@ -127,9 +123,9 @@ if(loginResponse.status === 405){
                   </div>
 
                   {/* Forgot password link */}
-                  {/* <Link to={'/reset'}>  </Link> */}
-                  <Link 
-                  to={'/reset'}
+
+                  <Link
+                    to={"/reset"}
                     className="text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600"
                   >
                     Forgot password?
@@ -140,7 +136,6 @@ if(loginResponse.status === 405){
                 <button
                   type="submit"
                   className="inline-block w-full rounded bg-primary px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-                
                 >
                   Sign in
                 </button>
@@ -164,8 +159,6 @@ if(loginResponse.status === 405){
                   {/* Register */}
                   Register
                 </Link>
-
-                {/* <Link to={'/register'}>name</Link> */}
               </form>
             </div>
           </div>

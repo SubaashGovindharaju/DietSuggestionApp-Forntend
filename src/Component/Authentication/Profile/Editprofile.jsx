@@ -45,7 +45,6 @@ const Editprofile = () => {
       [name]: value,
     });
   };
- 
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -73,15 +72,8 @@ const Editprofile = () => {
       // eslint-disable-next-line no-unused-vars
       const data = await loginResponse.json();
       navigate("/profile");
-
-      // Assuming the backend returns a response with a message
-
-      // Optionally, you can redirect the user to a different page after successful registration
-      // Example: history.push('/login');
     } catch (error) {
       console.error("Error creating user:", error);
-      // Handle error scenarios here
-      // Example: setBackendResponse('An error occurred while creating the user.');
     }
   };
 
