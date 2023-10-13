@@ -1,9 +1,9 @@
-import { useState,useEffect } from "react";
-import { BrowserRouter, Link, Route, Routes} from "react-router-dom";
+import { useState, useEffect } from "react";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 import Hero from "./Hero";
-import DiatRout from "../Diat/DiatRout";
-import DiatGain from "../Diat/DiatGain";
+import DiatRout from "../Diat/IndianDiat/DiatRout";
+import DiatGain from "../Diat/IndianDiat/DiatGain"; 
 import MondayGain from "../Diat/DiatForweightGain/MondayGain";
 import TuesdayGain from "../Diat/DiatForweightGain/TuesdayGain";
 import WednesdayGain from "../Diat/DiatForweightGain/WednesdayGain";
@@ -11,7 +11,7 @@ import ThursdayGain from "../Diat/DiatForweightGain/ThursdayGain";
 import FridayGain from "../Diat/DiatForweightGain/FridayGain";
 import SaturdayGain from "../Diat/DiatForweightGain/SaturdayGain";
 import SundayGain from "../Diat/DiatForweightGain/SundayGain";
-import DiatLoss from "../Diat/DiatLoss";
+import DiatLoss from "../Diat/IndianDiat/DiatLoss";
 import MondayLoss from "../Diat/DiatForweightLoss/MondayLoss";
 import TuesdayLoss from "../Diat/DiatForweightLoss/TuesdayLoss";
 import WednesdayLoss from "../Diat/DiatForweightLoss/WednesdayLoss";
@@ -28,6 +28,30 @@ import Registercheck from "../Authentication/Registercheck";
 import Profile from "../Authentication/Profile/Profile";
 import PrivateRoute from "../../PrivateRoute";
 import EditUser from "../Authentication/Profile/Editprofile";
+// import TamilFridayGain from "../Diat/TamilDiatForweightGain/TamilFridayGain";
+import Diatcuisine from "../Diat/Diatcuisine";
+
+// import TamilDiaRout from '../Diat/TamilnaduDiat/TamilDiatRout';
+import TamilDiatGain from '../Diat/TamilnaduDiat/TamilDiatGain';
+import TamilDiatLoss from '../Diat/TamilnaduDiat/TamilDiatLoss';
+import TamilMondayGain from "../Diat/TamilnaduDiat/TamilDiatForweightGain/TamilMondayGain";
+import TamilDiatRout from "../Diat/TamilnaduDiat/TamilDiatRout";
+import TamilTuesdayGain from "../Diat/TamilnaduDiat/TamilDiatForweightGain/TamilTuesdayGain";
+import TamilWednesdayGain from "../Diat/TamilnaduDiat/TamilDiatForweightGain/TamilWednesdayGain";
+import TamilThursdayGain from "../Diat/TamilnaduDiat/TamilDiatForweightGain/TamilThursdayGain";
+import TamilFridayGain from "../Diat/TamilnaduDiat/TamilDiatForweightGain/TamilFridayGain";
+import TamilSaturdayGain from "../Diat/TamilnaduDiat/TamilDiatForweightGain/TamilSaturdayGain";
+import TamilSundayGain from "../Diat/TamilnaduDiat/TamilDiatForweightGain/TamilSundayGain";
+import TamilMondayLoss from "../Diat/TamilnaduDiat/TamilDiatForweightLoss/TamilMondayLoss";
+import TamilTuesdayLoss from "../Diat/TamilnaduDiat/TamilDiatForweightLoss/TamilTuesdayLoss";
+import TamilWednesdayLoss from "../Diat/TamilnaduDiat/TamilDiatForweightLoss/TamilWednesdayLoss";
+import TamilThursdayLoss from "../Diat/TamilnaduDiat/TamilDiatForweightLoss/TamilThursdayLoss";
+import TamilFridayLoss from "../Diat/TamilnaduDiat/TamilDiatForweightLoss/TamilFridayLoss";
+import TamilSaturdayLoss from "../Diat/TamilnaduDiat/TamilDiatForweightLoss/TamilSaturdayLoss";
+import TamilSundayLoss from "../Diat/TamilnaduDiat/TamilDiatForweightLoss/TamilSundayLoss";
+
+
+
 
 function Navbar() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -41,7 +65,7 @@ function Navbar() {
   // const handleLogout = () => {
   //   // Remove user data from local storage
   //   localStorage.removeItem('user');
-    
+
   //   // Update the login state to false after logging out
   //   setIsLoggedIn(false);
   //     //     return <Navigate to={'/login'} replace />;
@@ -52,9 +76,8 @@ function Navbar() {
   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
-
     // Check if user data is present in localStorage
-    const user = localStorage.getItem('user');
+    const user = localStorage.getItem("user");
     if (user) {
       setLoggedIn(true);
     } else {
@@ -65,15 +88,15 @@ function Navbar() {
   const handleButtonClick = () => {
     if (loggedIn) {
       // If user is logged in, perform logout action
-      localStorage.removeItem('user');
+      localStorage.removeItem("user");
       setLoggedIn(false); // Update the state to reflect the logout
       window.location.reload(); // Reload the page after logout
     } else {
       // If user is not logged in, redirect to the login page
-      window.location.href = '/login'; // Replace with your login page URL
+      window.location.href = "/login"; // Replace with your login page URL
     }
   };
- 
+
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // useEffect(() => {
@@ -82,7 +105,6 @@ function Navbar() {
   //     setIsLoggedIn(true);
   //   }
   // }, []);
-
 
   // const handleClick = () => {
   //   if (isLoggedIn) {
@@ -95,7 +117,7 @@ function Navbar() {
 
   //     // Perform login logic here and store user in localStorage if needed.
   //     // Example: localStorage.setItem('user', JSON.stringify(userData));
-      
+
   //   }
   // };
 
@@ -107,7 +129,7 @@ function Navbar() {
   //   }
   //     else{
   //     return "Logout";
-  
+
   //     }
   //   };
   return (
@@ -148,7 +170,6 @@ function Navbar() {
               data-te-collapse-item
             >
               {/* Logo */}
-             
 
               {/* Left navigation links */}
               <ul
@@ -168,14 +189,13 @@ function Navbar() {
                 {/* Team link */}
                 <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
                   <Link
-                    to={"/diat"}
+                    to={"/diatcuisine"}
                     data-te-nav-link-ref
                     className="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
                   >
                     Diat Plan
                   </Link>
                 </li>
-                
               </ul>
             </div>
 
@@ -198,10 +218,19 @@ function Navbar() {
                   aria-expanded="false"
                 >
                   <span className="[&>svg]:w-5">
-                  <button style={{backgroundColor:'white', color:'black',fontWeight:'bold'}}onClick={handleButtonClick}> <i className="fa fa-sign-out" aria-hidden="true">
-                  {loggedIn ? 'Logout' : 'Login'}       
-                              </i>
-                      </button>
+                    <button
+                      style={{
+                        backgroundColor: "white",
+                        color: "black",
+                        fontWeight: "bold",
+                      }}
+                      onClick={handleButtonClick}
+                    >
+                      {" "}
+                      <i className="fa fa-sign-out" aria-hidden="true">
+                        {loggedIn ? "Logout" : "Login"}
+                      </i>
+                    </button>
                     {/* <button onClick={handleLogout}>
                       <i className="fa fa-sign-out" aria-hidden="true">
                       Logout
@@ -217,47 +246,50 @@ function Navbar() {
                 data-te-dropdown-alignment="end"
               >
                 {/* Second dropdown trigger */}
-                {loggedIn ? (<Link
-                  className="hidden-arrow flex items-center whitespace-nowrap transition duration-150 ease-in-out motion-reduce:transition-none"
-                  to={"/profile"}
-                  id="dropdownMenuButton2"
-                  role="button"
-                  data-te-dropdown-toggle-ref
-                  aria-expanded="false"
-                >
-                  {/* User avatar */}
-                  <img
-                    src="../assets/Profilelogo.png"
-                    className="rounded-full"
-                   style={{ height: "40px", width: "40px"}}
-                    alt=""
-                    loading="lazy"
-                  />
-                </Link>) : (<Link
-                  className="hidden-arrow flex items-center whitespace-nowrap transition duration-150 ease-in-out motion-reduce:transition-none"
-                  to={"/profile"}
-                  id="dropdownMenuButton2"
-                  role="button"
-                  data-te-dropdown-toggle-ref
-                  aria-expanded="false"
-                >
-                  {/* User avatar */}
-                  <img
-                    src="../assets/Profilelogo.png"
-                    className="rounded-full"
-                   style={{ height: "40px", width: "40px",display:'none'}}
-                    alt=""
-                    loading="lazy"
-                  />
-                </Link>)}
-                
+                {loggedIn ? (
+                  <Link
+                    className="hidden-arrow flex items-center whitespace-nowrap transition duration-150 ease-in-out motion-reduce:transition-none"
+                    to={"/profile"}
+                    id="dropdownMenuButton2"
+                    role="button"
+                    data-te-dropdown-toggle-ref
+                    aria-expanded="false"
+                  >
+                    {/* User avatar */}
+                    <img
+                      src="../assets/Profilelogo.png"
+                      className="rounded-full"
+                      style={{ height: "40px", width: "40px" }}
+                      alt=""
+                      loading="lazy"
+                    />
+                  </Link>
+                ) : (
+                  <Link
+                    className="hidden-arrow flex items-center whitespace-nowrap transition duration-150 ease-in-out motion-reduce:transition-none"
+                    to={"/profile"}
+                    id="dropdownMenuButton2"
+                    role="button"
+                    data-te-dropdown-toggle-ref
+                    aria-expanded="false"
+                  >
+                    {/* User avatar */}
+                    <img
+                      src="../assets/Profilelogo.png"
+                      className="rounded-full"
+                      style={{ height: "40px", width: "40px", display: "none" }}
+                      alt=""
+                      loading="lazy"
+                    />
+                  </Link>
+                )}
               </div>
             </div>
           </div>
         </nav>
       </div>
       <Routes>
-      <Route index path="/"  element={<Hero />}  />
+        <Route index path="/" element={<Hero />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/reset" element={<ForgotPasswordUI />} />
@@ -265,36 +297,161 @@ function Navbar() {
         <Route path="/verify" element={<Verify />} />
         <Route path="/twostep" element={<Registercheck />} />
 
-        
-        <Route path="/profile" element={<PrivateRoute element={<Profile />} />}/>
-        <Route path="/editprofile" element={<PrivateRoute element={<EditUser />} />}/>
-
+        <Route
+          path="/profile"
+          element={<PrivateRoute element={<Profile />} />}
+        />
+        <Route
+          path="/editprofile"
+          element={<PrivateRoute element={<EditUser />} />}
+        />
+        {/* <Route
+          path="/tamil"
+          element={<PrivateRoute element={<TamilFridayGain />} />}
+        /> */}
         {/* <Route path="/diat" element={<PrivateRoute element={<DiatRout />} />} />
         <Route index path="/DiatGain" element={<DiatGain />} /> */}
-        <Route path="/diat">
-          <Route index element={<PrivateRoute element={<DiatRout />} />} />
-          <Route path="diatgain" element={<DiatGain />} />
-          <Route path="diatgain">
-            <Route index element={<PrivateRoute element={<DiatGain />} />} />
-            <Route path="mondaygain" element={<PrivateRoute element={<MondayGain />} />}/>
-            <Route path="tuesdaygain" element={<PrivateRoute element={<TuesdayGain />} />} />
-            <Route path="wednesdaygain" element={<PrivateRoute element={<WednesdayGain />} />}/>
-            <Route path="thursdaygain" element={<PrivateRoute element={<ThursdayGain />} />}/>
-            <Route path="fridaygain" element={<PrivateRoute element={<FridayGain />} />}/>
-            <Route path="saturdaygain" element={<PrivateRoute element={<SaturdayGain />} />} />
-            <Route path="sundaygain" element={<PrivateRoute element={<SundayGain />} />} />
+
+        <Route path="/diatcuisine">
+          <Route index element={<PrivateRoute element={<Diatcuisine />} />} />
+
+          <Route path="diat">
+            <Route index element={<PrivateRoute element={<DiatRout />} />} />
+            <Route path="diatgain" element={<DiatGain />} />
+            <Route path="diatgain">
+              <Route index element={<PrivateRoute element={<DiatGain />} />} />
+              <Route
+                path="mondaygain"
+                element={<PrivateRoute element={<MondayGain />} />}
+              />
+              <Route
+                path="tuesdaygain"
+                element={<PrivateRoute element={<TuesdayGain />} />}
+              />
+              <Route
+                path="wednesdaygain"
+                element={<PrivateRoute element={<WednesdayGain />} />}
+              />
+              <Route
+                path="thursdaygain"
+                element={<PrivateRoute element={<ThursdayGain />} />}
+              />
+              <Route
+                path="fridaygain"
+                element={<PrivateRoute element={<FridayGain />} />}
+              />
+              <Route
+                path="saturdaygain"
+                element={<PrivateRoute element={<SaturdayGain />} />}
+              />
+              <Route
+                path="sundaygain"
+                element={<PrivateRoute element={<SundayGain />} />}
+              />
+            </Route>
+
+            <Route path="diatloss" element={<DiatLoss />} />
+            <Route path="diatloss">
+              <Route index element={<PrivateRoute element={<DiatLoss />} />} />
+              <Route
+                path="mondayloss"
+                element={<PrivateRoute element={<MondayLoss />} />}
+              />
+              <Route
+                path="tuesdayloss"
+                element={<PrivateRoute element={<TuesdayLoss />} />}
+              />
+              <Route
+                path="wednesdayloss"
+                element={<PrivateRoute element={<WednesdayLoss />} />}
+              />
+              <Route
+                path="thursdayloss"
+                element={<PrivateRoute element={<ThursdayLoss />} />}
+              />
+              <Route
+                path="fridayloss"
+                element={<PrivateRoute element={<FridayLoss />} />}
+              />
+              <Route
+                path="saturdayloss"
+                element={<PrivateRoute element={<SaturdayLoss />} />}
+              />
+              <Route
+                path="sundayloss"
+                element={<PrivateRoute element={<SundayLoss />} />}
+              />
+            </Route>
           </Route>
 
-          <Route path="diatloss" element={<DiatLoss />} />
-          <Route path="diatloss">
-            <Route index element={<PrivateRoute element={<DiatLoss />} />} />
-            <Route path="mondayloss" element={<PrivateRoute element={<MondayLoss />} />}/>
-            <Route path="tuesdayloss" element={<PrivateRoute element={<TuesdayLoss />} />} />
-            <Route path="wednesdayloss" element={<PrivateRoute element={<WednesdayLoss />} />}/>
-            <Route path="thursdayloss" element={<PrivateRoute element={<ThursdayLoss />} />}/>
-            <Route path="fridayloss" element={<PrivateRoute element={<FridayLoss />} />}/>
-            <Route path="saturdayloss" element={<PrivateRoute element={<SaturdayLoss />} />} />
-            <Route path="sundayloss" element={<PrivateRoute element={<SundayLoss />} />} />
+
+          <Route path="tamildiat">
+            <Route index element={<PrivateRoute element={<TamilDiatRout />} />} />
+            {/* <Route path="tamildiatgain" element={<TamilDiatGain />} /> */}
+            <Route path="tamildiatgain">
+              <Route index element={<PrivateRoute element={<TamilDiatGain  />} />} />
+              <Route
+                path="tamilmondaygain"
+                element={<PrivateRoute element={<TamilMondayGain />} />}
+              />
+              <Route
+                path="tamiltuesdaygain"
+                element={<PrivateRoute element={<TamilTuesdayGain />} />}
+              />
+              <Route
+                path="tamilwednesdaygain"
+                element={<PrivateRoute element={<TamilWednesdayGain/>} />}
+              />
+              <Route
+                path="tamilthursdaygain"
+                element={<PrivateRoute element={<TamilThursdayGain />} />}
+              />
+              <Route
+                path="tamilfridaygain"
+                element={<PrivateRoute element={<TamilFridayGain />} />}
+              />
+              <Route
+                path="tamilsaturdaygain"
+                element={<PrivateRoute element={<TamilSaturdayGain />} />}
+              />
+              <Route
+                path="tamilsundaygain"
+                element={<PrivateRoute element={<TamilSundayGain />} />}
+              />
+            </Route>
+
+            {/* <Route path="tamildiatloss" element={<TamilDiatLoss />} /> */}
+            <Route path="tamildiatloss">
+              <Route index element={<PrivateRoute element={<TamilDiatLoss />} />} />
+              <Route
+                path="tamilmondayloss"
+                element={<PrivateRoute element={<TamilMondayLoss />} />}
+              />
+              <Route
+                path="tamiltuesdayloss"
+                element={<PrivateRoute element={<TamilTuesdayLoss />} />}
+              />
+              <Route
+                path="tamilwednesdayloss"
+                element={<PrivateRoute element={<TamilWednesdayLoss />} />}
+              />
+              <Route
+                path="tamilthursdayloss"
+                element={<PrivateRoute element={<TamilThursdayLoss />} />}
+              />
+              <Route
+                path="tamilfridayloss"
+                element={<PrivateRoute element={<TamilFridayLoss />} />}
+              />
+              <Route
+                path="tamilsaturdayloss"
+                element={<PrivateRoute element={<TamilSaturdayLoss />} />}
+              />
+              <Route
+                path="tamilsundayloss"
+                element={<PrivateRoute element={<TamilSundayLoss />} />}
+              />
+            </Route>
           </Route>
 
 

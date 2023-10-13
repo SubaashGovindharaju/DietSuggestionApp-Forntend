@@ -6,7 +6,7 @@ function DiatLoss() {
     <div className={styles.imgbox}>
       <div className={styles.outbox}>
         <ol className={styles.circleList}>
-          <Link to={"/diat/diatloss/mondayloss"}>
+          <Link to={"/diatcuisine/diat/diatloss/mondayloss"}>
             <li className={styles.circleListItem}>
               <div className={`${styles.icon}`}>
                 <i className="fa-solid "></i>
@@ -15,7 +15,7 @@ function DiatLoss() {
               <div className={styles.descr}>Day 1</div>
             </li>
           </Link>
-          <Link to={"/diat/diatloss/tuesdayloss"}>
+          <Link to={"/diatcuisine/diat/diatloss/tuesdayloss"}>
             <li className={styles.circleListItem}>
               <div className={`${styles.icon} `}>
                 <i className="fa-solid "></i>
@@ -24,7 +24,7 @@ function DiatLoss() {
               <div className={styles.descr}>Day 2</div>
             </li>
           </Link>
-          <Link to={"/diat/diatloss/wednesdayloss"}>
+          <Link to={"/diatcuisine/diat/diatloss/wednesdayloss"}>
             <li className={styles.circleListItem}>
               <div className={`${styles.icon} `}>
                 <i className="fa-solid "></i>
@@ -33,7 +33,7 @@ function DiatLoss() {
               <div className={styles.descr}>Day 3</div>
             </li>
           </Link>
-          <Link to={"/diat/diatloss/thursdayloss"}>
+          <Link to={"/diatcuisine/diat/diatloss/thursdayloss"}>
             <li className={styles.circleListItem}>
               <div className={`${styles.icon} `}>
                 <i className="fa-solid "></i>
@@ -42,7 +42,7 @@ function DiatLoss() {
               <div className={styles.descr}>Day 4</div>
             </li>
           </Link>
-          <Link to={"/diat/diatloss/fridayloss"}>
+          <Link to={"/diatcuisine/diat/diatloss/fridayloss"}>
             <li className={styles.circleListItem}>
               <div className={`${styles.icon} `}>
                 <i className="fa-solid "></i>
@@ -51,7 +51,7 @@ function DiatLoss() {
               <div className={styles.descr}>Day 5</div>
             </li>
           </Link>
-          <Link to={"/diat/diatloss/saturdayloss"}>
+          <Link to={"/diatcuisine/diat/diatloss/saturdayloss"}>
             <li className={styles.circleListItem}>
               <div className={`${styles.icon} `}>
                 <i className="fa-solid "></i>
@@ -60,7 +60,7 @@ function DiatLoss() {
               <div className={styles.descr}>Day 6</div>
             </li>
           </Link>
-          <Link to={"/diat/diatloss/sundayloss"}>
+          <Link to={"/diatcuisine/diat/diatloss/sundayloss"}>
             <li className={styles.circleListItem}>
               <div className={`${styles.icon} `}>
                 <i className="fa-solid "></i>

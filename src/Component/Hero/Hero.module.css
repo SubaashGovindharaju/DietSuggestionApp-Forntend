@@ -87,25 +87,7 @@
 
   
 
-  /* App.css */
 
-/* Styling for the entire BMI calculator container */
-/* .bmi-calculator {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-  } */
-  
-  /* Styling for labels and input fields */
-  /* label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  } */
   
   input[type="number"] {
     width: 100%;

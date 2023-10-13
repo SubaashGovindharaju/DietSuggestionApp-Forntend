@@ -6,7 +6,7 @@ function DiatGain() {
     <div className={styles.imgbox}>
       <div className={styles.outbox}>
         <ol className={styles.circleList}>
-          <Link to={"/diat/diatgain/mondaygain"}>
+          <Link to={"/diatcuisine/tamildiat/tamildiatgain/tamilmondaygain"}>
             <li className={styles.circleListItem}>
               <div className={`${styles.icon}`}>
                 <i className="fa-solid "></i>
@@ -15,7 +15,7 @@ function DiatGain() {
               <div className={styles.descr}>Day 1</div>
             </li>
           </Link>
-          <Link to={"/diat/diatgain/tuesdaygain"}>
+          <Link to={"/diatcuisine/tamildiat/tamildiatgain/tamiltuesdaygain"}>
             <li className={styles.circleListItem}>
               <div className={`${styles.icon} `}>
                 <i className="fa-solid "></i>
@@ -24,7 +24,7 @@ function DiatGain() {
               <div className={styles.descr}>Day 2</div>
             </li>
           </Link>
-          <Link to={"/diat/diatgain/wednesdaygain"}>
+          <Link to={"/diatcuisine/tamildiat/tamildiatgain/tamilwednesdaygain"}>
             <li className={styles.circleListItem}>
               <div className={`${styles.icon} `}>
                 <i className="fa-solid "></i>
@@ -33,7 +33,7 @@ function DiatGain() {
               <div className={styles.descr}>Day 3</div>
             </li>
           </Link>
-          <Link to={"/diat/diatgain/thursdaygain"}>
+          <Link to={"/diatcuisine/tamildiat/tamildiatgain/tamilthursdaygain"}>
             <li className={styles.circleListItem}>
               <div className={`${styles.icon} `}>
                 <i className="fa-solid "></i>
@@ -42,7 +42,7 @@ function DiatGain() {
               <div className={styles.descr}>Day 4</div>
             </li>
           </Link>
-          <Link to={"/diat/diatgain/fridaygain"}>
+          <Link to={"/diatcuisine/tamildiat/tamildiatgain/tamilfridaygain"}>
             <li className={styles.circleListItem}>
               <div className={`${styles.icon} `}>
                 <i className="fa-solid "></i>
@@ -51,7 +51,7 @@ function DiatGain() {
               <div className={styles.descr}>Day 5</div>
             </li>
           </Link>
-          <Link to={"/diat/diatgain/saturdaygain"}>
+          <Link to={"/diatcuisine/tamildiat/tamildiatgain/tamilsaturdaygain"}>
             <li className={styles.circleListItem}>
               <div className={`${styles.icon} `}>
                 <i className="fa-solid "></i>
@@ -60,7 +60,7 @@ function DiatGain() {
               <div className={styles.descr}>Day 6</div>
             </li>
           </Link>
-          <Link to={"/diat/diatgain/sundaygain"}>
+          <Link to={"/diatcuisine/tamildiat/tamildiatgain/tamilsundaygain"}>
             <li className={styles.circleListItem}>
               <div className={`${styles.icon} `}>
                 <i className="fa-solid "></i>
