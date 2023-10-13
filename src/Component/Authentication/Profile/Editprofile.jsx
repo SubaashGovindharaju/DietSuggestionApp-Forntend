@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { backendUrl } from "../../../config";
+import { useNavigate } from "react-router-dom";
 
 const Editprofile = () => {
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate();
 
   const Profilefetch = async () => {
     const userdata = JSON.parse(localStorage.getItem("user"));
@@ -43,6 +45,7 @@ const Editprofile = () => {
       [name]: value,
     });
   };
+ 
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -69,6 +72,7 @@ const Editprofile = () => {
 
       // eslint-disable-next-line no-unused-vars
       const data = await loginResponse.json();
+      navigate("/profile");
 
       // Assuming the backend returns a response with a message
 
