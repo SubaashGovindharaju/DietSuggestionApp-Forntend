@@ -10,24 +10,14 @@
   background-position: center;
 }
 
-/* @media screen and (max-width: 321px) {
-    .imgweightloss{
-        background-image: url('../assets/North-Indian.jpg');
-        background-size:10% 10%;
-        background-position: center;
-    }
-  } */
-
-@media screen and (max-width: 426px) {
-  .imgweightloss {
-    background-size: 95% 100%;
+@media screen and (min-width: 769px) {
+  
+  .imgLayout{
+    height: 730px ;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
   }
-
-  .imgweightgain {
-    background-size: 95% 100%;
-  }
-}
-
+  
 .weightloss {
   margin-top: 40%;
   margin-left: 25%;
@@ -49,11 +39,56 @@
   margin-right: 25%;
   border-radius: 30px;
   background: rgba(227, 221, 210, 0.73);
-  padding: 50px;
+  padding: 40px;
   height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
   color: black;
   font-size: 30px;
+}
+
+  }
+
+@media screen and (max-width: 768px) {
+  .imgweightloss {
+    background-size: 100% 100%;
+  }
+
+  .imgweightgain {
+    background-size: 100% 100%;
+  }
+
+  .imgLayout{
+    height: 750px ;
+  }
+  .weightloss {
+    margin-top: 25%;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 30px;
+    background: rgba(227, 221, 210, 0.73);
+    padding: 20px;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 30px;
+  }
+
+  .weightgain {
+    margin-top: 25%;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 30px;
+    background: rgba(227, 221, 210, 0.73);
+    padding: 20px;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 30px;
+  }
 }

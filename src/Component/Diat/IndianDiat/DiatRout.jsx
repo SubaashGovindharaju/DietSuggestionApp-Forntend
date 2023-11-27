@@ -4,8 +4,7 @@ import styles from "./DiatRout.module.css";
 function DiatRout() {
   return (
     <div className="container">
-      <div className="grid grid-cols-2 gap-6" style={{ height: 730 }}>
-        <div className={styles.imgweightloss}>
+ <div className= {`grid ${styles.imgLayout}`}>        <div className={styles.imgweightloss}>
           <Link to="/diatcuisine/diat/diatloss">
             <div className={styles.weightloss}>Weight Loss</div>
           </Link>

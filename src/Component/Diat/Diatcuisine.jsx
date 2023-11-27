@@ -5,7 +5,7 @@ import styles from "./Diatcuisine.module.css";
 function Diatcuisine() {
   return (
     <div className="container">
-      <div className="grid grid-cols-2 gap-6" style={{ height: 730 }}>
+      <div className= {`grid ${styles.imgLayout}`}>
         <div className={styles.imgweightloss}>
           <Link to="/diatcuisine/diat">
             <div className={styles.weightloss}>Indian</div>

@@ -2,28 +2,40 @@ import { useEffect, useState } from "react";
 import { backendUrl } from "../../../config";
 import { useNavigate } from "react-router-dom";
 
-const Editprofile = () => {
+const EditProfile = () => {
   const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  const Profilefetch = async () => {
-    const userdata = JSON.parse(localStorage.getItem("user"));
-    console.log(userdata.email);
+  const profileFetch = async () => {
+    try {
+      const userdata = JSON.parse(localStorage.getItem("user"));
+      console.log(userdata.email);
 
-    const loginResponse = await fetch(`${backendUrl}/auth/profile`, {
-      method: "POST",
-      body: JSON.stringify({ email: userdata.email }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await loginResponse.json();
-    setUsers(data);
-    console.log(data);
+      const loginResponse = await fetch(`${backendUrl}/auth/profile`, {
+        method: "POST",
+        body: JSON.stringify({ email: userdata.email }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!loginResponse.ok) {
+        throw new Error("Failed to fetch user data");
+      }
+
+      const data = await loginResponse.json();
+      setUsers(data);
+      setLoading(false);
+      console.log(data);
+    } catch (error) {
+      console.error("Error during fetch:", error);
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
-    Profilefetch();
+    profileFetch();
   }, []);
 
   const userdata = JSON.parse(localStorage.getItem("user"));
@@ -69,24 +81,27 @@ const Editprofile = () => {
         throw new Error("Network response was not ok");
       }
 
-      // eslint-disable-next-line no-unused-vars
-      const data = await loginResponse.json();
+      const data = await loginResponse.text();
+      console.log("Response from server:", data); // Add this line for debugging
       navigate("/profile");
     } catch (error) {
-      console.error("Error creating user:", error);
+      console.error("Error during fetch:", error);
     }
   };
 
   return (
     <div className="bg-gray-100 min-h-screen py-6 flex flex-col justify-center sm:py-12">
-      <div className="relative py-3 sm:max-w-xl sm:mx-auto">
-        <div className="relative px-4 py-10 bg-white mx-8 md:mx-0 shadow rounded-3xl sm:p-10">
-          <div className="max-w-md mx-auto">
-            <div className="divide-y divide-gray-200">
-              <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
-                <h2 className="text-2xl font-semibold leading-tight">
-                  Edit Profile
-                </h2>
+    <div className="relative py-3 sm:max-w-xl sm:mx-auto">
+      <div className="relative px-4 py-10 bg-white mx-8 md:mx-0 shadow rounded-3xl sm:p-10">
+        <div className="max-w-md mx-auto">
+          <div className="divide-y divide-gray-200">
+            <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+              <h2 className="text-2xl font-semibold leading-tight">
+                Edit Profile
+              </h2>
+              {loading ? (
+                <p>Loading...</p>
+              ) : (
                 <form onSubmit={handleSubmit}>
                   <div>
                     <label htmlFor="firstName">First Name:</label>
@@ -156,7 +171,8 @@ const Editprofile = () => {
                       Update Profile
                     </button>
                   </div>
-                </form>
+                  </form>
+                )}
               </div>
             </div>
           </div>
@@ -166,4 +182,4 @@ const Editprofile = () => {
   );
 };
 
-export default Editprofile;
+export default EditProfile;

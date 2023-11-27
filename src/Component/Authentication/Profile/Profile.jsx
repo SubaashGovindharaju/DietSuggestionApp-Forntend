@@ -20,7 +20,7 @@ const Profile = () => {
     setUsers(data);
     console.log(data);
   };
-  console.log(users.Lastname);
+  console.log(users);
 
   useEffect(() => {
     Profilefetch();
@@ -120,6 +120,12 @@ const Profile = () => {
                           {users.Age}
                         </span>
                         <span className="text-sm text-blueGray-400">Age</span>
+                      </div>
+                      <div className="lg:mr-4 p-3 text-center">
+                        <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
+                          {users.Gender}
+                        </span>
+                        <span className="text-sm text-blueGray-400">Gender</span>
                       </div>
                     </div>
                   </div>
