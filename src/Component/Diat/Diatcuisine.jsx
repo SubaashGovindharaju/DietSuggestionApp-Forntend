@@ -8,13 +8,13 @@ function Diatcuisine() {
       <div className= {`grid ${styles.imgLayout}`}>
         <div className={styles.imgweightloss}>
           <Link to="/diatcuisine/diat">
-            <div className={styles.weightloss}>Indian</div>
+            <div className={styles.weightloss}>North Indian</div>
           </Link>
         </div>
 
         <div className={styles.imgweightgain}>
           <Link to="/diatcuisine/tamildiat">
-            <div className={styles.weightgain}>Tamil Nadu</div>
+            <div className={styles.weightgain}>Sount Indian</div>
           </Link>
         </div>
       </div>
